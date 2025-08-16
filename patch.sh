@@ -4,7 +4,7 @@ set -euo pipefail ; # <- this semicolon and comment make options apply
 # even when script is corrupt by CRLF line terminators (issue #75)
 # empty line must follow this comment for immediate fail with CRLF newlines
 
-backup_path="/opt/nvidia/libnvidia-encode-backup"
+backup_path="/tmp"
 silent_flag=''
 manual_driver_version=''
 flatpak_flag=''
@@ -410,8 +410,12 @@ rollback () {
 }
 
 patch () {
-    patch_common
-    ensure_bytes_are_valid
+    #patch_common
+    #ensure_bytes_are_valid
+    driver_version="$DRIVER_VERSION"
+    object='libnvidia-encode.so'
+    driver_dir="$DRIVER_DIR"
+    patch="${patch_list[$driver_version]}"
     if [[ -f "$backup_path/$object.$driver_version$backup_suffix" ]]; then
         bkp_hash="$(sha1sum "$backup_path/$object.$driver_version$backup_suffix" | cut -f1 -d\ )"
         drv_hash="$(sha1sum "$driver_dir/$object.$driver_version" | cut -f1 -d\ )"
@@ -429,7 +433,7 @@ patch () {
     sed "$patch" "$backup_path/$object.$driver_version$backup_suffix" > \
       "${PATCH_OUTPUT_DIR-$driver_dir}/$object.$driver_version"
     sha1sum "${PATCH_OUTPUT_DIR-$driver_dir}/$object.$driver_version"
-    ldconfig
+    #ldconfig -C "$LD_CACHE" -f "$LD_CONF"
     echo "Patched!"
 }
 
