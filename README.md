@@ -1,7 +1,7 @@
 NVENC and NvFBC patches for Nvidia drivers
 ==========================================
 
-![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest version](https://img.shields.io/badge/latest%20linux%20driver%20version-595.58.03-brightgreen.svg)
+![GitHub last commit](https://img.shields.io/github/last-commit/keylase/nvidia-patch.svg) ![Latest version](https://img.shields.io/badge/latest%20linux%20driver%20version-615.71.09-brightgreen.svg)
 
 [NVENC patch](patch.sh) removes restriction on maximum number of simultaneous NVENC video encoding sessions imposed by Nvidia to consumer-grade GPUs.
 
@@ -262,10 +262,23 @@ If you want to donate, please send it to your favorite open source organizations
 | 580.119.02 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/580.119.02/NVIDIA-Linux-x86_64-580.119.02.run) |
 | 580.126.09 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/580.126.09/NVIDIA-Linux-x86_64-580.126.09.run) |
 | 580.142 | YES | YES | [Driver link](https://download.nvidia.com/XFree86/Linux-x86_64/580.142/NVIDIA-Linux-x86_64-580.142.run) |
+| 580.159.03 | YES | YES | [Driver link](https://developer.download.nvidia.com/compute/cuda/repos/debian12/x86_64/cuda-drivers-580_580.159.03-1_amd64.deb) |
+| 580.159.04 | YES | YES | [Driver link](https://developer.download.nvidia.com/compute/cuda/repos/debian12/x86_64/cuda-drivers-580_580.159.04-1_amd64.deb) |
+| 580.173.02 | YES | YES | [Driver link](https://developer.download.nvidia.com/compute/cuda/repos/debian12/x86_64/cuda-drivers-580_580.173.02-1_amd64.deb) |
+| 580.178.04 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/580.178.04/NVIDIA-Linux-x86_64-580.178.04.run) |
 | 590.44.01 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/590.44.01/NVIDIA-Linux-x86_64-590.44.01.run) |
 | 590.48.01 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/590.48.01/NVIDIA-Linux-x86_64-590.48.01.run) |
 | 595.45.04 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/595.45.04/NVIDIA-Linux-x86_64-595.45.04.run) |
 | 595.58.03 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/595.58.03/NVIDIA-Linux-x86_64-595.58.03.run) |
+| 595.71.05 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/595.71.05/NVIDIA-Linux-x86_64-595.71.05.run) |
+| 595.80 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/595.80/NVIDIA-Linux-x86_64-595.80.run) |
+| 595.84 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/595.84/NVIDIA-Linux-x86_64-595.84.run) |
+| 595.91.07 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/595.91.07/NVIDIA-Linux-x86_64-595.91.07.run) |
+| 595.99.02 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/595.99.02/NVIDIA-Linux-x86_64-595.99.02.run) |
+| 610.43.02 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/610.43.02/NVIDIA-Linux-x86_64-610.43.02.run) |
+| 610.43.03 | YES | YES | [Driver link](https://international.download.nvidia.com/XFree86/Linux-x86_64/610.43.03/NVIDIA-Linux-x86_64-610.43.03.run) |
+| 610.57.04 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/610.57.04/NVIDIA-Linux-x86_64-610.57.04.run) |
+| 615.71.09 | YES | YES | [Driver link](http://international.download.nvidia.com/XFree86/Linux-x86_64/615.71.09/NVIDIA-Linux-x86_64-615.71.09.run) |
 
 ## Synopsis
 
@@ -377,7 +390,7 @@ bash ./patch.sh -f
 bash ./patch-fbc.sh -f
 ```
 
-In case something goes wrong, you can restore the original Flatpak drivers by adding the `-r` paramater:
+In case something goes wrong, you can restore the original Flatpak drivers by adding the `-r` parameter:
 
 ```
 bash ./patch.sh -f -r
